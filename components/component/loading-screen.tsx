@@ -227,8 +227,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onNavigateToInitia
   )
 }
 
-function LightbulbIcon(props) {
-  return (
+const LightbulbIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -245,12 +244,9 @@ function LightbulbIcon(props) {
       <path d="M9 18h6" />
       <path d="M10 22h4" />
     </svg>
-  )
-}
+  );
 
-
-function MoveHorizontalIcon(props) {
-  return (
+const MoveHorizontalIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -267,12 +263,11 @@ function MoveHorizontalIcon(props) {
       <polyline points="6 8 2 12 6 16" />
       <line x1="2" x2="22" y1="12" y2="12" />
     </svg>
-  )
-}
+  );
 
 
-function Package2Icon(props) {
-  return (
+
+const Package2Icon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -289,12 +284,10 @@ function Package2Icon(props) {
       <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9" />
       <path d="M12 3v6" />
     </svg>
-  )
-}
+  );
 
 
-function SearchIcon(props) {
-  return (
+const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -310,12 +303,10 @@ function SearchIcon(props) {
       <circle cx="11" cy="11" r="8" />
       <path d="m21 21-4.3-4.3" />
     </svg>
-  )
-}
+  );
 
 
-function XIcon(props) {
-  return (
+const XIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -331,5 +322,12 @@ function XIcon(props) {
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />
     </svg>
-  )
-}
+  );
+
+export {
+  LightbulbIcon,
+  MoveHorizontalIcon,
+  Package2Icon,
+  SearchIcon,
+  XIcon
+  };
