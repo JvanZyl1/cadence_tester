@@ -36,6 +36,30 @@ interface InitialScreenProps {
   onNavigateToScore: () => void;
 }
 
+import React from 'react';
+import { ChartContainer } from "@/components/ui/chart"; // Ensure correct import path
+
+type AreachartChartProps = {
+  data: any[]; // Adjust the type based on your actual data structure
+};
+
+const AreachartChart = (props: AreachartChartProps) => {
+  return (
+    <div>
+      <ChartContainer
+        width={500}
+        height={300}
+        data={props.data} // Assuming data is a property in props
+      >
+        {/* Define your chart content here */}
+      </ChartContainer>
+    </div>
+  );
+}
+
+export default AreachartChart;
+
+
 export function InitialScreen({ onNavigateToLoading, onNavigateToScore }: InitialScreenProps) {
   const [selectedItem, setSelectedItem] = useState("Apples");
 
