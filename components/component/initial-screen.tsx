@@ -31,27 +31,35 @@ import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
 import { CartesianGrid, XAxis, Area, AreaChart, Line, LineChart } from "recharts"
 import { ChartTooltipContent, ChartTooltip, ChartContainer } from "@/components/ui/chart"
 
-export function InitialScreen({ onNavigateToLoading, onNavigateToScore }) {
-  const [selectedItem, setSelectedItem] = useState("Apples")
+interface InitialScreenProps {
+  onNavigateToLoading: () => void;
+  onNavigateToScore: () => void;
+}
+
+export function InitialScreen({ onNavigateToLoading, onNavigateToScore }: InitialScreenProps) {
+  const [selectedItem, setSelectedItem] = useState("Apples");
+
   return (
     <div className="flex flex-col min-h-screen bg-muted/40">
       <header className="flex items-center h-16 px-4 border-b bg-background shrink-0 md:px-6">
         <nav className="hidden gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+          {/* Navigation link to Home or main page */}
           <Link href="#" className="flex items-center gap-2 text-lg font-semibold md:text-base" prefetch={false}>
             <Package2Icon className="w-6 h-6" />
             <span className="sr-only">Acme Wholesale</span>
           </Link>
+          {/* Static link, possibly showing current inventory status */}
           <Link href="#" className="font-bold" prefetch={false}>
             Inventory
-            </Link>
-            {/* Add onClick handler for Orders */}
-            <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigateToLoading("loading")}>
-              Orders
-            </Link>
-            {/* Update onClick handler for Pricing to navigate to ScoreScreen */}
-            <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigateToScore("score")}>
-              Pricing
-            </Link>
+          </Link>
+          {/* Dynamic link to navigate to the 'loading' screen (functionality via passed onNavigate prop) */}
+          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={onNavigateToLoading}>
+            Orders
+          </Link>
+          {/* Dynamic link to navigate directly to the 'score' screen (functionality via passed onNavigate prop) */}
+          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={onNavigateToScore}>
+            Pricing
+          </Link>
         </nav>
         <div className="flex items-center w-full gap-4 md:ml-auto md:gap-2 lg:gap-4">
           <form className="flex-1 ml-auto sm:flex-initial">
