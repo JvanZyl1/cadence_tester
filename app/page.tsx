@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { InitialScreen } from "@/components/component/initial-screen";
 import { LoadingScreen } from "@/components/component/loading-screen";
