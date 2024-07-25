@@ -26,7 +26,12 @@ export default function Page() {
           onNavigateToScore={() => handleNavigate('score')} 
         />
       )}
-      {currentScreen === 'score' && <ScoreScreen />}
+      {currentScreen === 'score' && (
+        <ScoreScreen
+          onNavigateToInitial={() => handleNavigate('initial')}
+          onNavigateToLoading={() => handleNavigate('loading')}
+      />
+    )}
     </>
   );
 }
