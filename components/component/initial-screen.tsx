@@ -249,7 +249,14 @@ export function InitialScreen({ onNavigateToLoading, onNavigateToScore }: Initia
   )
 }
 
-function AreachartChart(props) {
+interface AreachartChartProps extends React.HTMLAttributes<HTMLDivElement> {
+  // If there are additional props, define them here
+  // For example:
+  // customProp?: string;
+}
+
+
+const AreachartChart: React.FC<AreachartChartProps> = (props) => {
   return (
     <div {...props}>
       <ChartContainer
