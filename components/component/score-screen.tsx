@@ -24,7 +24,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 
-export function ScoreScreen( {onNavigateToInitial, onNavigateToLoading} ) {
+interface ScoreScreenProps {
+  onNavigateToInitial: () => void;
+  onNavigateToLoading: () => void;
+}
+
+export const ScoreScreen: React.FC<ScoreScreenProps> = ({ onNavigateToInitial, onNavigateToLoading }) => {
   return (
     <div className="flex flex-col min-h-screen bg-muted/40">
       <header className="flex items-center h-16 px-4 border-b bg-background shrink-0 md:px-6">
@@ -33,10 +38,10 @@ export function ScoreScreen( {onNavigateToInitial, onNavigateToLoading} ) {
             <Package2Icon className="w-6 h-6" />
             <span className="sr-only">Acme Wholesale</span>
           </Link>
-          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigateToInitial("initial")}>
+          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={onNavigateToInitial}>
             Inventory
           </Link>
-          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigateToLoading("loading")}>
+          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={onNavigateToLoading}>
             Orders
           </Link>
           <Link href="#" className="font-bold" prefetch={false}>
