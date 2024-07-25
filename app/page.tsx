@@ -20,9 +20,15 @@ export default function Page() {
         />
       )}
       {currentScreen === 'loading' && (
-        <LoadingScreen onNavigate={() => handleNavigate('score')} />
+        <LoadingScreen
+          onNavigateToInitial={() => handleNavigate('initial')}
+          onNavigateToScore={() => handleNavigate('score')}
+        />
       )}
-      {currentScreen === 'score' && <ScoreScreen />}
+      {currentScreen === 'score' && <ScoreScreen 
+        onNavigateToInitial={() => handleNavigate('initial')}
+        onNavigateToLoading={() => handleNavigate('loading')}
+      />}
     </>
   );
 }
