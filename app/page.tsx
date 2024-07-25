@@ -2,7 +2,7 @@
 // use client
 import React, { useState } from 'react';
 import { InitialScreen } from "@/components/component/initial-screen";
-import LoadingScreen from "@/components/component/loading-screen";
+import {LoadingScreen} from "@/components/component/loading-screen";
 import { ScoreScreen } from "@/components/component/score-screen";
 
 export default function Page() {
