@@ -393,6 +393,10 @@ const LightbulbIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   </svg>
 );
 
+interface LinechartChartProps extends React.HTMLAttributes<HTMLDivElement> {
+  // Define any additional props if needed
+}
+
 const LinechartChart: React.FC<LinechartChartProps> = (props) => (
     <div {...props}>
       <ChartContainer
