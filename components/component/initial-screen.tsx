@@ -31,7 +31,7 @@ import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
 import { CartesianGrid, XAxis, Area, AreaChart, Line, LineChart } from "recharts"
 import { ChartTooltipContent, ChartTooltip, ChartContainer } from "@/components/ui/chart"
 
-export function InitialScreen({ onNavigate }) {
+export function InitialScreen({ onNavigateToLoading, onNavigateToScore }) {
   const [selectedItem, setSelectedItem] = useState("Apples")
   return (
     <div className="flex flex-col min-h-screen bg-muted/40">
@@ -45,11 +45,11 @@ export function InitialScreen({ onNavigate }) {
             Inventory
             </Link>
             {/* Add onClick handler for Orders */}
-            <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigate("loading")}>
+            <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigateToLoading("loading")}>
               Orders
             </Link>
             {/* Update onClick handler for Pricing to navigate to ScoreScreen */}
-            <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => handleNavigate("score")}>
+            <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigateToScore("score")}>
               Pricing
             </Link>
         </nav>
