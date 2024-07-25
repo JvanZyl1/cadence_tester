@@ -31,7 +31,7 @@ interface LoadingScreenProps {
   onNavigateToScore: () => void;
 }
 
-export function LoadingScreen({ onNavigateToInitial, onNavigateToScore }) {
+export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onNavigateToInitial, onNavigateToScore }) => {
   return (
     <div className="flex flex-col min-h-screen bg-muted/40">
       <header className="flex items-center h-16 px-4 border-b bg-background shrink-0 md:px-6">
@@ -40,14 +40,14 @@ export function LoadingScreen({ onNavigateToInitial, onNavigateToScore }) {
             <Package2Icon className="w-6 h-6" />
             <span className="sr-only">Acme Wholesale</span>
           </Link>
-          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigateToInitial("initial")}>
+          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={onNavigateToInitial}>
             Inventory
           </Link>
           <Link href="#" className="font-bold" prefetch={false}>
             Orders
           </Link>
-          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={() => onNavigateToScore("score")}>
-              Pricing
+          <Link href="#" className="text-muted-foreground" prefetch={false} onClick={onNavigateToScore}>
+            Pricing
           </Link>
         </nav>
         <div className="flex items-center w-full gap-4 md:ml-auto md:gap-2 lg:gap-4">
