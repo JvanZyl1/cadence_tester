@@ -176,8 +176,7 @@ export const ScoreScreen: React.FC<ScoreScreenProps> = ({ onNavigateToInitial, o
   )
 }
 
-function CheckIcon(props) {
-  return (
+const CheckIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -192,12 +191,10 @@ function CheckIcon(props) {
     >
       <path d="M20 6 9 17l-5-5" />
     </svg>
-  )
-}
+  );
 
 
-function LightbulbIcon(props) {
-  return (
+const LightbulbIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -214,12 +211,10 @@ function LightbulbIcon(props) {
       <path d="M9 18h6" />
       <path d="M10 22h4" />
     </svg>
-  )
-}
+  );
 
 
-function Package2Icon(props) {
-  return (
+const Package2Icon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -236,12 +231,9 @@ function Package2Icon(props) {
       <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9" />
       <path d="M12 3v6" />
     </svg>
-  )
-}
+  );
 
-
-function SearchIcon(props) {
-  return (
+const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -257,12 +249,10 @@ function SearchIcon(props) {
       <circle cx="11" cy="11" r="8" />
       <path d="m21 21-4.3-4.3" />
     </svg>
-  )
-}
+  );
 
 
-function XIcon(props) {
-  return (
+const XIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -278,5 +268,12 @@ function XIcon(props) {
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />
     </svg>
-  )
-}
+  );
+
+export {
+  CheckIcon,
+  LightbulbIcon,
+  Package2Icon,
+  SearchIcon,
+  XIcon
+  };
