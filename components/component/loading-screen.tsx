@@ -24,6 +24,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
+
+
+interface LoadingScreenProps {
+  onNavigateToInitial: () => void;
+  onNavigateToScore: () => void;
+}
+
 export function LoadingScreen({ onNavigateToInitial, onNavigateToScore }) {
   return (
     <div className="flex flex-col min-h-screen bg-muted/40">
